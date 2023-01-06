@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" >
+        <table>
+            <tbody>
+                <form action="/update/{{object.id}}" method="POST">
+                    {% csrf_token %}
+                    <tr>
+                        <td>Name</td>
+                        <td> <input type="text" name="name" value="{{object.name}}" required> </td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td> <input type="text" name="age" value="{{object.age}}" required> </td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td> <textarea name="address" required>{{object.address}}" </textarea></td>
+                    </tr>
+                    <tr><button>Submit</button></tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
